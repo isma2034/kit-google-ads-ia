@@ -1,0 +1,13 @@
+# Configuration lecture seule du serveur MCP Google Ads (googleads/google-ads-mcp).
+#
+# Outils actifs : lister les comptes, requêtes GAQL, métadonnées des champs.
+# Outils désactivés : création d'assets, envoi de vidéos, gestion des libellés.
+# Pour réactiver une catégorie, passe-la à true (les modifications restent soumises
+# à une confirmation en deux étapes côté serveur).
+
+namespaces:
+  customers: true
+  search: true
+  metadata: true
+  labels: false
+  assets: false

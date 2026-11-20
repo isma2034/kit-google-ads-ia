@@ -32,8 +32,17 @@ Poser des questions en français sur tes comptes, par exemple :
 
 L'assistant écrit lui-même les requêtes (GAQL) et lit les résultats.
 
-**Ce que ce kit ne fait pas :** il est réglé en **lecture seule**. L'assistant ne peut ni
-modifier une enchère, ni mettre une campagne en pause, ni rien publier.
+**Ce que ce kit ne fait pas :**
+
+- **Rien modifier.** Il est réglé en **lecture seule** : l'assistant ne peut ni modifier une
+  enchère, ni mettre une campagne en pause, ni rien publier.
+- **Pas de Planificateur de mots-clés ni de prévisions.** Le serveur de Google ne propose pas
+  ces outils, et le niveau d'accès Explorer bloque les services de planification de mots-clés,
+  de couverture et d'audience. Le Planificateur de performances n'existe, à notre connaissance,
+  que dans l'interface Google Ads.
+  Ce qui marche à la place : analyser tes vrais termes de recherche et tes mots-clés existants
+  (prompt n°6), ou exporter le Planificateur de mots-clés en CSV depuis l'interface et donner
+  le fichier à ton assistant.
 
 ## Pourquoi c'est devenu simple
 
@@ -150,11 +159,17 @@ uvx --version
 tourne : une modification faite pendant qu'il est ouvert est perdue au redémarrage. Le script
 le vérifie et te demande de le fermer s'il est encore ouvert.
 
-Depuis le dossier du kit, dans le Terminal :
+Télécharge le kit, puis lance le script depuis son dossier, dans le Terminal :
 
 ```bash
+git clone https://github.com/isma2034/kit-google-ads-ia.git
+cd kit-google-ads-ia
 bash installer.sh ~/Downloads/le-fichier-de-cle.json
 ```
+
+Sans `git` : sur la [page du dépôt](https://github.com/isma2034/kit-google-ads-ia), bouton
+**Code → Download ZIP**, décompresse l'archive, puis place-toi dans le dossier obtenu avec `cd`
+avant de lancer la dernière commande.
 
 Ajoute `--mcc 1234567890` si tu passes par un compte administrateur (MCC), sans tirets.
 
@@ -178,7 +193,7 @@ Demande à ton assistant :
 1. « À quels comptes Google Ads ai-je accès ? »
 2. « Combien de campagnes actives sur le compte 123-456-7890 ? »
 
-Puis essaie les [5 prompts d'audit](prompts-audit.md).
+Puis essaie les [6 prompts d'audit](prompts-audit.md).
 
 ---
 

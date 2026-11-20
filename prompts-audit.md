@@ -1,4 +1,4 @@
-# 5 prompts d'audit Google Ads à coller dans ton assistant IA
+# 6 prompts d'audit Google Ads à coller dans ton assistant IA
 
 Remplace `[ID_COMPTE]` par l'identifiant du compte (10 chiffres, avec ou sans tirets).
 Chaque prompt précise les tables de l'API à utiliser : l'assistant se trompe moins quand on le guide.
@@ -86,6 +86,28 @@ Compare chaque page à la moyenne du compte et signale :
 - les pages qui concentrent plus de 20 % du coût.
 Ne teste pas les URL toi-même : donne-moi la liste à vérifier dans un navigateur.
 ```
+
+## 6. Quels mots-clés ajouter ou exclure, d'après mes vrais termes de recherche ?
+
+> Le kit n'a pas accès au Planificateur de mots-clés. Ce prompt part de ce que les internautes
+> ont réellement tapé, ce qui est souvent plus fiable que des estimations.
+
+```text
+Sur le compte Google Ads [ID_COMPTE], sur les 30 derniers jours :
+1. Interroge search_term_view : terme de recherche, campagne, groupe d'annonces, impressions,
+   clics, coût, conversions et valeur de conversion.
+2. Interroge keyword_view : texte du mot-clé, type de correspondance, statut, mêmes métriques.
+3. Compare les deux et propose :
+   - des mots-clés à ajouter : termes qui convertissent mais ne sont pas encore des mots-clés
+     (avec le type de correspondance conseillé et le groupe d'annonces d'accueil) ;
+   - des mots-clés à exclure : termes qui dépensent sans conversion ou hors sujet, regroupés
+     par thème (marques concurrentes, emploi, gratuit, informationnel…) ;
+   - des mots-clés existants qui ne déclenchent presque jamais d'impressions.
+Présente le tout en tableaux. Ne modifie rien : je validerai chaque ajout dans Google Ads.
+```
+
+Google masque les termes de recherche trop rares (seuils de confidentialité) : une partie des
+dépenses n'apparaît pas terme par terme.
 
 ---
 
